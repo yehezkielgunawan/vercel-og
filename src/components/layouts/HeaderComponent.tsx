@@ -23,7 +23,7 @@ const HeaderComponent = () => {
         )}
       >
         <h5 className="font-bold text-black dark:text-white">
-          yehez-nexttailwind-starter
+          Yehez OG Image Generator
         </h5>
         <Button
           variant="outline"

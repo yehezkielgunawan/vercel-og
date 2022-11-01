@@ -7,6 +7,7 @@ enum ButtonVariant {
   "primary",
   "outline",
   "ghost",
+  "secondary",
   "light",
   "dark",
 }
@@ -14,6 +15,7 @@ enum ButtonVariant {
 type ButtonProps = {
   isLoading?: boolean;
   variant?: keyof typeof ButtonVariant;
+  block?: boolean;
 } & React.ComponentPropsWithRef<"button">;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -24,6 +26,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled: buttonDisabled,
       isLoading,
       variant = "primary",
+      block = false,
       ...rest
     },
     ref
@@ -39,6 +42,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "focus:outline-none focus-visible:ring focus-visible:ring-primary-500",
           "shadow-sm",
           "transition duration-200 ease-in",
+          block && "w-full justify-center",
           [
             variant === "primary" && [
               "bg-primary-500 text-white",
@@ -46,6 +50,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               "hover:bg-primary-600 hover:text-white",
               "active:bg-primary-500",
               "disabled:bg-primary-400 disabled:hover:bg-primary-400",
+            ],
+            variant === "secondary" && [
+              "bg-secondary-500 text-white",
+              "border border-secondary-600",
+              "hover:bg-secondary-600 hover:text-white",
+              "active:bg-secondary-500",
+              "disabled:bg-secondary-400 disabled:hover:bg-secondary-400",
             ],
             variant === "outline" && [
               "text-primary-500",
