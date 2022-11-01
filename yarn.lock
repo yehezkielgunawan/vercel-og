@@ -478,10 +478,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/catamaran@^4.5.6":
-  version "4.5.6"
-  resolved "https://registry.yarnpkg.com/@fontsource/catamaran/-/catamaran-4.5.6.tgz#c19b3f98ef62c0bf4236590fef2e1fbc94cdc1e8"
-  integrity sha512-wGeyY8koWXFBWVgBaWEQ9LSTmLmCTBChuMsi+lL+U5gHEpBbvVyJ6e9Iu+ROKX1qp+8wH9HOF+06OMfBELySSQ==
+"@fontsource/fira-sans@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/fira-sans/-/fira-sans-4.5.10.tgz#63a6dacfa482017a840b40e9c2cfefb187a0e515"
+  integrity sha512-4Edj+GA0LYSqfXOvdTwVGmCShT8Ycd8bKzdfzM302n+I6Hsg6h3gBkBeNgN19PhkcngDznZyHv3EkyrKqvMTGw==
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
