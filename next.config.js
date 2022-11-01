@@ -8,4 +8,7 @@ module.exports = {
   eslint: {
     dirs: ["src"],
   },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
 };
