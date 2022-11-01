@@ -1,7 +1,12 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
-import { interBold, interMedium } from "@/lib/helpers/inter";
+import {
+  firaSansBold,
+  firaSansLight,
+  firaSansRegular,
+  firaSansSemibold,
+} from "@/lib/helpers/inter";
 
 export const config = {
   runtime: "experimental-edge",
@@ -9,8 +14,10 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const interMediumFontData = await interMedium;
-  const interBoldFontData = await interBold;
+  const firaSansSemiboldData = await firaSansSemibold;
+  const firaSansBoldData = await firaSansBold;
+  const firaSansRegularData = await firaSansRegular;
+  const firaSansLightData = await firaSansLight;
   const title = searchParams.get("title") ?? "Sample Title";
   const desc = searchParams.get("desc") ?? "Sample Description";
   const siteName = searchParams.get("siteName") ?? "yehezgun.com";
@@ -22,10 +29,10 @@ export default async function handler(req: NextRequest) {
       <div tw="bg-gray-800 w-full h-full flex flex-col">
         <div tw="w-full h-10/12 flex items-center justify-between px-24 text-white">
           <div tw="flex flex-col">
-            <h1 tw="text-6xl font-bold" style={{ fontFamily: "Inter-Bold" }}>
+            <h1 tw="text-5xl" style={{ fontFamily: "FiraSans-Bold" }}>
               {title}
             </h1>
-            <h4 tw="text-3xl mt-8" style={{ fontFamily: "Inter-Medium" }}>
+            <h4 tw="text-2xl mt-8" style={{ fontFamily: "FiraSans-Light" }}>
               {desc}
             </h4>
           </div>
@@ -42,8 +49,15 @@ export default async function handler(req: NextRequest) {
           </figure>
         </div>
         <div tw="w-full h-1/6 px-24 flex items-center justify-between text-white">
-          <p tw="font-bold text-xl">{siteName}</p>
-          <p tw="font-medium text-xl">Twitter: @yehezgun</p>
+          <p tw="font-bold text-xl" style={{ fontFamily: "FiraSans-Medium" }}>
+            {siteName}
+          </p>
+          <p
+            tw="font-medium text-xl"
+            style={{ fontFamily: "FiraSans-Regular" }}
+          >
+            Twitter: @yehezgun
+          </p>
         </div>
       </div>
     ),
@@ -52,13 +66,23 @@ export default async function handler(req: NextRequest) {
       height: 600,
       fonts: [
         {
-          name: "Inter-Medium",
-          data: interMediumFontData,
+          name: "FiraSans-Light",
+          data: firaSansLightData,
+          weight: 400,
+        },
+        {
+          name: "FiraSans-Regular",
+          data: firaSansRegularData,
+          weight: 500,
+        },
+        {
+          name: "FiraSans-Medium",
+          data: firaSansSemiboldData,
           weight: 600,
         },
         {
-          name: "Inter-Bold",
-          data: interBoldFontData,
+          name: "FiraSans-Bold",
+          data: firaSansBoldData,
           weight: 800,
         },
       ],

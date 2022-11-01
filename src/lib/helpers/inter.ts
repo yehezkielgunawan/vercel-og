@@ -1,8 +1,9 @@
 import { fontLoader } from "./fontLoader";
 
-const interFontLoader = (weight: string) =>
-  fontLoader(`/assets/font/interbureau${weight}.ttf`);
+const firaSansFontLoader = (weight: string) =>
+  fontLoader(`/assets/font/FiraSans-${weight}.otf`);
 
-export const interRegular = interFontLoader("");
-export const interMedium = interFontLoader("semibold");
-export const interBold = interFontLoader("bold");
+export const firaSansRegular = firaSansFontLoader("Regular");
+export const firaSansSemibold = firaSansFontLoader("SemiBold");
+export const firaSansBold = firaSansFontLoader("Bold");
+export const firaSansLight = firaSansFontLoader("Light");
