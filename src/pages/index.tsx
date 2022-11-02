@@ -13,9 +13,12 @@ const Home: NextPage = () => {
   const [imgUrl, setImgUrl] = useState<string>("");
   const [siteName, setSiteName] = useState<string>("yehezgun.com");
   const [isCopied, setIsCopied] = useState<boolean>(false);
-  const ogUrl = `${baseURL}api/og?title=${title}&desc=${desc}${
-    imgUrl.length > 10 && `&imgUrl=${imgUrl}`
-  }&siteName=${siteName}`;
+  const ogUrl = new URL(
+    `/api/og?title=${title}&desc=${desc}${
+      imgUrl.length > 10 ? `&imgUrl=${imgUrl}` : ""
+    }&siteName=${siteName}`,
+    baseURL
+  );
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
@@ -32,18 +35,20 @@ const Home: NextPage = () => {
 
   const onCopied = () => {
     setIsCopied(true);
-    navigator.clipboard.writeText(ogUrl);
+    navigator.clipboard.writeText(ogUrl.toString());
     setTimeout(() => {
       setIsCopied(false);
-    }, 3000);
+    }, 4000);
   };
 
   return (
     <Layout>
-      <main className="flex flex-wrap items-center justify-between gap-6 md:flex-nowrap">
-        <section className="w-full space-y-4">
+      <main className="flex flex-wrap justify-between gap-6 md:flex-nowrap">
+        <section className="flex w-full flex-col gap-4">
           <div className="flex flex-col gap-2">
-            <label htmlFor="title">Page Title</label>
+            <label htmlFor="title" className="font-bold">
+              Page Title
+            </label>
             <input
               type="text"
               onChange={handleTitleChange}
@@ -52,7 +57,9 @@ const Home: NextPage = () => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="title">Description</label>
+            <label htmlFor="title" className="font-bold">
+              Description
+            </label>
             <input
               type="text"
               onChange={handleDescChange}
@@ -61,7 +68,9 @@ const Home: NextPage = () => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="title">Image URL</label>
+            <label htmlFor="title" className="font-bold">
+              Image URL
+            </label>
             <input
               type="text"
               onChange={handleImgUrlChange}
@@ -69,7 +78,9 @@ const Home: NextPage = () => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="title">Site Name</label>
+            <label htmlFor="title" className="font-bold">
+              Site Name
+            </label>
             <input
               type="text"
               onChange={handleSiteNameChange}
@@ -81,15 +92,21 @@ const Home: NextPage = () => {
             Copy URL
           </Button>
         </section>
-        <section className="w-full space-y-4">
+        <section className="flex w-full flex-col gap-4">
           <figure>
-            <BaseImage src={ogUrl} className="rounded-md" />
+            <BaseImage src={ogUrl.toString()} className="rounded-md" />
           </figure>
-          <p>{ogUrl}</p>
+          <p
+            className="break-all hover:cursor-pointer hover:underline"
+            onClick={() => onCopied()}
+          >
+            {ogUrl.toString()}
+          </p>
           <p
             className={clsxm(
               !isCopied && "invisible",
-              "rounded-lg bg-pink-300 p-2 dark:bg-pink-600"
+              "rounded-lg bg-pink-300 p-2 dark:bg-pink-600",
+              "font-bold italic"
             )}
           >
             The link has been copied!
