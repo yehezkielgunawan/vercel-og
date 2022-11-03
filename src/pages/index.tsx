@@ -8,7 +8,7 @@ import { baseURL } from "@/constants/baseConstants";
 import clsxm from "@/lib/helpers/clsxm";
 
 const Home: NextPage = () => {
-  const [title, setTitle] = useState<string>("Title");
+  const [title, setTitle] = useState<string>("Title Dicoba dulu pake ini yak");
   const [desc, setDesc] = useState<string>("Description");
   const [imgUrl, setImgUrl] = useState<string>("");
   const [siteName, setSiteName] = useState<string>("yehezgun.com");

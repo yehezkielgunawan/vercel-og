@@ -1,5 +1,5 @@
 import Image, { ImageProps } from "next/image";
-import React, { useState } from "react";
+import React from "react";
 
 import clsxm from "@/lib/helpers/clsxm";
 
@@ -22,7 +22,6 @@ export default function NextImage({
   imgClassName,
   ...rest
 }: NextImageProps) {
-  const [status, setStatus] = useState<boolean>(false);
   const widthIsSet = className?.includes("w-") ?? false;
 
   return (
@@ -31,18 +30,15 @@ export default function NextImage({
       style={!widthIsSet ? { width: `${width}px` } : undefined}
     >
       <Image
-        className={clsxm(
-          imgClassName,
-          "transition duration-500",
-          status ? "scale-100 blur-0" : "scale-120 blur-2xl"
-        )}
+        className={clsxm(imgClassName)}
         src={src}
         width={width}
         height={height}
+        placeholder="blur"
         alt={alt}
-        onLoadingComplete={() => setStatus(true)}
         priority
         decoding="async"
+        loading="lazy"
         unoptimized
         {...rest}
       />
