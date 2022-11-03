@@ -18,8 +18,8 @@ export default async function handler(req: NextRequest) {
   const firaSansBoldData = await firaSansBold;
   const firaSansRegularData = await firaSansRegular;
   const firaSansLightData = await firaSansLight;
-  const title = searchParams.get("title") ?? "Sample Title";
-  const desc = searchParams.get("desc") ?? "Sample Description";
+  const title = searchParams.get("title") ?? "Title";
+  const desc = searchParams.get("desc") ?? "Description";
   const siteName = searchParams.get("siteName") ?? "yehezgun.com";
   const imgUrl =
     searchParams.get("imgUrl") ??
@@ -28,7 +28,7 @@ export default async function handler(req: NextRequest) {
     (
       <div tw="bg-gray-800 w-full h-full flex flex-col">
         <div tw="w-full h-10/12 flex items-center justify-between px-24 text-white">
-          <div tw="flex flex-col">
+          <div tw="flex flex-col max-w-3xl">
             <h1 tw="text-5xl" style={{ fontFamily: "FiraSans-Bold" }}>
               {title}
             </h1>
