@@ -13,3 +13,4 @@ But if you also find this template is useful, you also can use it. And of course
 ## References
 
 - [Tailwind CSS Official Docs](https://tailwindcss.com/)
+- [Vercel OG Docs](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation)
