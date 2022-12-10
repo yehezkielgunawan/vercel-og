@@ -1,6 +1,7 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
+import { baseImageURL } from "@/constants/baseConstants";
 import {
   firaSansBold,
   firaSansLight,
@@ -21,9 +22,7 @@ export default async function handler(req: NextRequest) {
   const title = searchParams.get("title") ?? "Title";
   const desc = searchParams.get("desc") ?? "Description";
   const siteName = searchParams.get("siteName") ?? "yehezgun.com";
-  const imgUrl =
-    searchParams.get("imgUrl") ??
-    "https://res.cloudinary.com/yehez/image/upload/v1646485864/yehez_avatar_transparent_swwqcq.png";
+  const imgUrl = searchParams.get("imgUrl") ?? baseImageURL;
   return new ImageResponse(
     (
       <div tw="bg-gray-800 w-full h-full flex flex-col">
@@ -36,15 +35,15 @@ export default async function handler(req: NextRequest) {
               {desc}
             </h4>
           </div>
-          <figure tw="bg-slate-600 rounded-full">
+          <figure
+            tw={imgUrl === baseImageURL ? "bg-slate-600 rounded-full" : ""}
+          >
             <img
+              tw={imgUrl === baseImageURL ? "rounded-full" : ""}
               src={imgUrl}
               alt="og-image"
               width="256"
               height="256"
-              style={{
-                borderRadius: 100,
-              }}
             />
           </figure>
         </div>
