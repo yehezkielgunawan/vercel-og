@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "release": "standard-version",
     "test": "jest",
     "prettier:ci": "prettier --check ./**/*.{ts,tsx}",
     "typescript:ci": "tsc --noEmit",
@@ -20,24 +19,24 @@
     "@tailwindcss/forms": "^0.4.0",
     "@vercel/og": "^0.0.20",
     "clsx": "^1.1.1",
-    "next": "^13.1.4",
-    "next-seo": "^4.29.0",
-    "next-themes": "^0.1.1",
+    "next": "^13.3.4",
+    "next-seo": "^6.0.0",
+    "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.3.1",
-    "tailwind-merge": "^1.2.0"
+    "tailwind-merge": "^1.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@types/node": "^18.14.2",
-    "@types/react": "^18.0.15",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.2.0",
     "autoprefixer": "^10.4.4",
     "eslint": "^8.13.0",
-    "eslint-config-next": "^13.1.4",
+    "eslint-config-next": "^13.3.4",
     "eslint-config-yehezgun": "^1.2.2",
     "husky": "^7.0.0",
     "jest": "^28.1.0",
@@ -46,9 +45,8 @@
     "postcss": "^8.4.8",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.10",
-    "standard-version": "^9.3.2",
-    "tailwindcss": "^3.1.6",
-    "typescript": "^4.8.4"
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.4"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
