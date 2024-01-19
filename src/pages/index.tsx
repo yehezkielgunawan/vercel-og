@@ -7,6 +7,10 @@ import Layout from "@/components/layouts/Layout";
 import { baseURL } from "@/constants/baseConstants";
 import clsxm from "@/lib/helpers/clsxm";
 
+export const config = {
+  runtime: "experimental-edge",
+};
+
 const Home: NextPage = () => {
   const [title, setTitle] = useState<string>("Title");
   const [desc, setDesc] = useState<string>("Description");

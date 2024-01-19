@@ -10,6 +10,10 @@ import PrimaryLink from "@/components/links/PrimaryLink";
 import UnderlineLink from "@/components/links/UnderlineLink";
 import UnstyledLink from "@/components/links/UnstyledLink";
 
+export const config = {
+  runtime: "experimental-edge",
+};
+
 const Components = () => {
   return (
     <Layout>
