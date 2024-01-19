@@ -38,7 +38,7 @@
     "autoprefixer": "^10.4.4",
     "eslint": "^8.13.0",
     "eslint-config-next": "^13.3.4",
-    "eslint-config-yehezgun": "^1.2.2",
+    "eslint-config-yehezgun": "^1.2.7",
     "husky": "^7.0.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
