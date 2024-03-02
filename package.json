@@ -35,7 +35,7 @@
     "@testing-library/react": "^13.3.0",
     "@types/node": "^18.11.9",
     "@types/react": "^18.2.0",
-    "autoprefixer": "^10.4.4",
+    "autoprefixer": "^10.4.18",
     "eslint": "^8.13.0",
     "eslint-config-next": "^13.3.4",
     "eslint-config-yehezgun": "^1.2.2",
