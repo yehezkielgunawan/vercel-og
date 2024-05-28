@@ -22,6 +22,7 @@ export default async function handler(req: NextRequest) {
   const title = searchParams.get("title") ?? "Title";
   const desc = searchParams.get("desc") ?? "Description";
   const siteName = searchParams.get("siteName") ?? "yehezgun.com";
+  const socialMedia = searchParams.get("socialMedia") ?? "Twitter: @yehezgun";
   const imgUrl = searchParams.get("imgUrl") ?? baseImageURL;
   return new ImageResponse(
     (
@@ -55,7 +56,7 @@ export default async function handler(req: NextRequest) {
             tw="font-medium text-xl"
             style={{ fontFamily: "FiraSans-Regular" }}
           >
-            Twitter: @yehezgun
+            {socialMedia}
           </p>
         </div>
       </div>

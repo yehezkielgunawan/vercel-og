@@ -15,12 +15,13 @@ const Home: NextPage = () => {
   const [title, setTitle] = useState<string>("Title");
   const [desc, setDesc] = useState<string>("Description");
   const [imgUrl, setImgUrl] = useState<string>("");
+  const [socialMedia, setSocialMedia] = useState<string>("Twitter: @yehezgun");
   const [siteName, setSiteName] = useState<string>("yehezgun.com");
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const ogUrl = new URL(
     `/api/og?title=${title}&desc=${desc}${
       imgUrl.length > 10 ? `&imgUrl=${imgUrl}` : ""
-    }&siteName=${siteName}`,
+    }&siteName=${siteName}&socialMedia=${socialMedia}`,
     baseURL
   );
 
@@ -35,6 +36,9 @@ const Home: NextPage = () => {
   };
   const handleSiteNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSiteName(e.target.value);
+  };
+  const handleSocialMediaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSocialMedia(e.target.value);
   };
 
   const onCopied = () => {
@@ -90,6 +94,17 @@ const Home: NextPage = () => {
               onChange={handleSiteNameChange}
               className={clsxm("base-form")}
               defaultValue={siteName}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="title" className="font-bold">
+              Social Media
+            </label>
+            <input
+              type="text"
+              onChange={handleSocialMediaChange}
+              className={clsxm("base-form")}
+              defaultValue={socialMedia}
             />
           </div>
           <Button block variant="secondary" onClick={() => onCopied()}>
