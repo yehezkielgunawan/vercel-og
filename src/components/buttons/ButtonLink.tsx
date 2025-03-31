@@ -2,14 +2,14 @@ import React from "react";
 
 import clsxm from "@/lib/helpers/clsxm";
 
-import UnstyledLink, { UnstyledLinkProps } from "../links/UnstyledLink";
+import UnstyledLink, { type UnstyledLinkProps } from "../links/UnstyledLink";
 
 enum ButtonVariant {
-	primary,
-	outline,
-	ghost,
-	light,
-	dark,
+	primary = 0,
+	outline = 1,
+	ghost = 2,
+	light = 3,
+	dark = 4,
 }
 
 type ButtonLinkProps = {

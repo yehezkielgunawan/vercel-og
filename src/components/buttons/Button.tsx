@@ -4,12 +4,12 @@ import { ImSpinner2 } from "react-icons/im";
 import clsxm from "@/lib/helpers/clsxm";
 
 enum ButtonVariant {
-	primary,
-	outline,
-	ghost,
-	secondary,
-	light,
-	dark,
+	primary = 0,
+	outline = 1,
+	ghost = 2,
+	secondary = 3,
+	light = 4,
+	dark = 5,
 }
 
 type ButtonProps = {
@@ -90,7 +90,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				{isLoading && (
 					<div
 						className={clsxm(
-							"absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+							"-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2",
 							{
 								"text-white": ["primary", "dark"].includes(variant),
 								"text-black": ["light"].includes(variant),

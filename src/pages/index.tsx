@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 
 import Button from "@/components/buttons/Button";
 import BaseImage from "@/components/images/BaseImage";

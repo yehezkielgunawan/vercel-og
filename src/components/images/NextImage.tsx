@@ -1,5 +1,4 @@
-import Image, { ImageProps } from "next/image";
-import React from "react";
+import Image, { type ImageProps } from "next/image";
 
 import clsxm from "@/lib/helpers/clsxm";
 
