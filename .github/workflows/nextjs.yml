@@ -22,6 +22,14 @@ jobs:
         cache: "pnpm"
     - name: Install Deps (immutable)
       run: pnpm install --no-frozen-lockfile
+    - name: Setup Biome
+      uses: biomejs/setup-biome@v2
+      with:
+        version: latest
+    - name: Run Biome
+      run: pnpm biome:lint:ci
+    - name: Run TypeScript
+      run: pnpm typescript:ci
     - name: Build
       run: pnpm build
     - name: Run Unit Test

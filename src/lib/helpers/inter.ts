@@ -1,7 +1,7 @@
 import { fontLoader } from "./fontLoader";
 
 const firaSansFontLoader = (weight: string) =>
-  fontLoader(`/assets/font/FiraSans-${weight}.otf`);
+	fontLoader(`/assets/font/FiraSans-${weight}.otf`);
 
 export const firaSansRegular = firaSansFontLoader("Regular");
 export const firaSansSemibold = firaSansFontLoader("SemiBold");
