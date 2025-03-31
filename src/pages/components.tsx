@@ -1,5 +1,3 @@
-
-
 import Button from "@/components/buttons/Button";
 import ButtonLink from "@/components/buttons/ButtonLink";
 import BaseImage from "@/components/images/BaseImage";

@@ -1,5 +1,3 @@
-
-
 const FooterComponent = () => {
 	return (
 		<footer className="bottom-0 py-16 text-center">
