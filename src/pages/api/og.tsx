@@ -1,7 +1,7 @@
 import { ImageResponse } from "@vercel/og";
 import type { NextRequest } from "next/server";
 
-import { baseImageURL } from "@/constants/baseConstants";
+import { baseImageURL, baseURL } from "@/constants/baseConstants";
 import {
   firaSansBold,
   firaSansLight,
@@ -14,7 +14,7 @@ export const config = {
 };
 
 export default async function handler(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
+  const { searchParams } = new URL(req.url, baseURL);
   const firaSansSemiboldData = await firaSansSemibold;
   const firaSansBoldData = await firaSansBold;
   const firaSansRegularData = await firaSansRegular;
