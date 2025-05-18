@@ -7,6 +7,7 @@ import BaseImage from "@/components/images/BaseImage";
 import Layout from "@/components/layouts/Layout";
 import { baseURL } from "@/constants/baseConstants";
 import clsxm from "@/lib/helpers/clsxm";
+import { useDebounce } from "@/hooks/useDebounce";
 
 const Home: NextPage = () => {
   const [title, setTitle] = useState<string>("Title");
@@ -22,20 +23,43 @@ const Home: NextPage = () => {
     baseURL
   );
 
+  // Create debounced handlers
+  const debouncedSetTitle = useDebounce(
+    (value: string) => setTitle(value),
+    500
+  );
+  const debouncedSetDesc = useDebounce((value: string) => setDesc(value), 500);
+  const debouncedSetImgUrl = useDebounce(
+    (value: string) => setImgUrl(value),
+    500
+  );
+  const debouncedSetSiteName = useDebounce(
+    (value: string) => setSiteName(value),
+    500
+  );
+  const debouncedSetSocialMedia = useDebounce(
+    (value: string) => setSocialMedia(value),
+    500
+  );
+
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value);
+    debouncedSetTitle(e.target.value);
   };
+
   const handleDescChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDesc(e.target.value);
+    debouncedSetDesc(e.target.value);
   };
+
   const handleImgUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setImgUrl(e.target.value);
+    debouncedSetImgUrl(e.target.value);
   };
+
   const handleSiteNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSiteName(e.target.value);
+    debouncedSetSiteName(e.target.value);
   };
+
   const handleSocialMediaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSocialMedia(e.target.value);
+    debouncedSetSocialMedia(e.target.value);
   };
 
   const onCopied = () => {
