@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "clean": "rm -rf .next coverage node_modules tsconfig.tsbuildinfo",
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
