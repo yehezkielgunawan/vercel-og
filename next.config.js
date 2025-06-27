@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
+	output: "standalone",
+	experimental: {
+		esmExternals: "loose",
+	},
 	reactStrictMode: true,
 	images: {
 		domains: ["assets.vercel.com", "https://res.cloudinary.com/"],
@@ -8,3 +12,5 @@ module.exports = {
 		BASE_URL: process.env.BASE_URL,
 	},
 };
+
+module.exports = nextConfig;
