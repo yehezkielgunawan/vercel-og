@@ -16,10 +16,9 @@ const Home: NextPage = () => {
 	const [socialMedia, setSocialMedia] = useState<string>("Twitter: @yehezgun");
 	const [siteName, setSiteName] = useState<string>("yehezgun.com");
 	const [isCopied, setIsCopied] = useState<boolean>(false);
-	const [useSST, setUseSST] = useState<boolean>(false);
 
-	// Choose endpoint based on deployment or user preference
-	const apiEndpoint = useSST ? "/api/og-sst" : "/api/og";
+	// Always use /api/og as the endpoint
+	const apiEndpoint = "/api/og";
 
 	const ogUrl = new URL(
 		`${apiEndpoint}?title=${title}&desc=${desc}${
@@ -136,25 +135,6 @@ const Home: NextPage = () => {
 					<Button block variant="secondary" onClick={() => onCopied()}>
 						Copy URL
 					</Button>
-
-					{/* Endpoint Toggle for Testing */}
-					<div className="flex flex-col gap-2">
-						<label className="font-bold" htmlFor="API Endpoint Label">
-							API Endpoint
-						</label>
-						<div className="flex items-center gap-2">
-							<input
-								type="checkbox"
-								id="useSST"
-								checked={useSST}
-								onChange={(e) => setUseSST(e.target.checked)}
-								className="rounded"
-							/>
-							<label htmlFor="useSST" className="text-sm">
-								Use SST Endpoint ({useSST ? "/api/og-sst" : "/api/og"})
-							</label>
-						</div>
-					</div>
 				</section>
 				<section className="flex w-full flex-col gap-4">
 					<figure>
