@@ -5,8 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-	--font-primary: Fira Sans, ui-sans-serif, system-ui, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-primary:
+		Fira Sans, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 	--color-primary-50: #91ffff;
 	--color-primary-100: #87ffff;
@@ -81,7 +82,9 @@
 			U+2215, U+FEFF, U+FFFD;
 	}
 	.cursor-newtab {
-		cursor: url("/newtab-cursor.png") 10 10, pointer;
+		cursor:
+			url("/newtab-cursor.png") 10 10,
+			pointer;
 	}
 
 	/* #region  /**=========== Typography =========== */

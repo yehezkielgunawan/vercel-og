@@ -9,7 +9,7 @@ type BaseImageProps = {
 const BaseImage = React.forwardRef<HTMLImageElement, BaseImageProps>(
 	({ className, ...rest }, ref) => {
 		return (
-			// biome-ignore lint/a11y/useAltText: <explanation>
+			// biome-ignore lint: false positive
 			<img
 				aria-label="image"
 				ref={ref}
