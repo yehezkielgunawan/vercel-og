@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	output: "standalone",
-	experimental: {
-		esmExternals: "loose",
-	},
 	reactStrictMode: true,
 	images: {
 		domains: ["assets.vercel.com", "https://res.cloudinary.com/"],
