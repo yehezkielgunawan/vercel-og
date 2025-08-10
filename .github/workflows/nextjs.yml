@@ -9,28 +9,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - name: Install pnpm
-      uses: pnpm/action-setup@v4
-      with:
-        run_install: false
-    - name: Set up Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: "pnpm"
-    - name: Install Deps (immutable)
-      run: pnpm install --no-frozen-lockfile
-    - name: Setup Biome
-      uses: biomejs/setup-biome@v2
-      with:
-        version: latest
-    - name: Run Biome
-      run: pnpm biome:lint:ci
-    - name: Run TypeScript
-      run: pnpm typescript:ci
-    - name: Build
-      run: pnpm build
-    - name: Run Unit Test
-      run: pnpm test:ci
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+      - name: Install Deps (immutable)
+        run: pnpm install --no-frozen-lockfile
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
+        with:
+          version: latest
+      - name: Run Biome
+        run: pnpm biome:lint:ci
+      - name: Run TypeScript
+        run: pnpm typescript:ci
+      - name: Build
+        run: pnpm build
+      - name: Run Unit Test
+        run: pnpm test:ci
